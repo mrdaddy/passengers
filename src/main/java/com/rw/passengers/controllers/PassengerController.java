@@ -30,14 +30,14 @@ public class PassengerController {
     @RequestMapping(method = RequestMethod.PUT, path = "/{passengerId}")
     @ApiOperation(value = "Обновление пассажира по идентификатору")
     @ResponseStatus( HttpStatus.ACCEPTED )
-    public Passenger createPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира") @PathVariable("passengerId") long passengerId, @RequestBody @ApiParam(required = true, value = "Данные пассажира") Passenger passenger) {
+    public Passenger createPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestBody @ApiParam(required = true, value = "Данные пассажира") Passenger passenger) {
         return passengerService.updatePassenger(passengerId, passenger);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{passengerId}")
     @ApiOperation(value = "Удаление пассажира по идентификатору")
     @ResponseStatus( HttpStatus.ACCEPTED)
-    public void deletePassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира") @PathVariable("passengerId") long passengerId) {
+    public void deletePassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId) {
         passengerService.deletePassenger(passengerId);
     }
 
@@ -50,7 +50,7 @@ public class PassengerController {
                             @ResponseHeader(name = "ETag", response = String.class, description = "Хеш для кэширования")}),
             @ApiResponse(code = 304, message = "Not Modified")
     })
-    public Passenger getPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира") @PathVariable("passengerId") long passengerId, @RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm) {
+    public Passenger getPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm) {
         return passengerService.getPassenger(passengerId);
     }
 
