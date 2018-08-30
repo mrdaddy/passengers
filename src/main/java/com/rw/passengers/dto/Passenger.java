@@ -28,10 +28,6 @@ public class Passenger {
     @Size(min = 1, max = 32)
     private String lastName;
 
-    @ApiModelProperty(example = "1", required = false, value = "Количество мест для данного пассажира", dataType = "String")
-    @Max(4)
-    private int placesCount;
-
     @ApiModelProperty(example = "M", required = false, value = "Пол пассажира (необходим для продажи по глобальным ценам и вагонам с признаком М/Ж)", dataType = "String")
     private SEX_TYPE sex;
 

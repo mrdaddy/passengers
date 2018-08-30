@@ -109,11 +109,6 @@
             <artifactId>guava</artifactId>
             <version>26.0-jre</version>
         </dependency>
-        <dependency>
-            <groupId>com.rw.xml</groupId>
-            <artifactId>xmlgate</artifactId>
-            <version>1.0</version>
-        </dependency>
 
         <!-- <dependency>
             <groupId>com.openshift</groupId>
