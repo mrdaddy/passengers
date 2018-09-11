@@ -110,6 +110,12 @@
             <artifactId>guava</artifactId>
             <version>26.0-jre</version>
         </dependency>
+        <dependency>
+            <!-- JSON Web Token Support -->
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
 
         <!-- <dependency>
             <groupId>com.openshift</groupId>

@@ -2,6 +2,7 @@ package com.rw.passengers.services;
 
 import com.rw.passengers.dao.PassengerDao;
 import com.rw.passengers.dto.Passenger;
+import com.rw.passengers.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -32,7 +33,7 @@ public class PassengerService {
         return new Passenger();
     }
 
-    public List<Passenger> getPassengers() {
+    public List<Passenger> getPassengers(User user) {
         return new ArrayList<Passenger>();
     }
 }
