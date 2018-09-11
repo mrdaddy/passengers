@@ -7,6 +7,7 @@ import com.rw.passengers.services.PassengerService;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ import java.util.List;
 @PreAuthorize("hasRole('U')")
 @RestController
 @Api(value="passengers", description="Сервис работы с пассажирами", tags = "Пассажиры", basePath="/passengers")
-@RequestMapping(path = "/${service.version}/passengers")
+@RequestMapping(path = "/${service.version}/passengers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class PassengerController {
     @Autowired
     PassengerService passengerService;
@@ -68,7 +69,7 @@ public class PassengerController {
                             @ResponseHeader(name = "ETag", response = String.class, description = "Хеш для кэширования")}),
             @ApiResponse(code = 304, message = "Not Modified")
     })
-    public List<Passenger> getPassengers(@RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm, @RequestAttribute("user") User user) {
+    public List<Passenger> getPassengers(@RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm, @RequestAttribute(value = "user", required = false) User user) {
         return passengerService.getPassengers(user);
     }
 
