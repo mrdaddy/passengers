@@ -13,16 +13,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@ApiResponses(value = {
-        @ApiResponse(code = 400, message = "Bad request", response = ErrorMessage.class, responseContainer = "List"),
-        @ApiResponse(code = 503, message = "Service Unavailable"),
-        @ApiResponse(code = 504, message = "Gateway Timeout")
-})
-@PreAuthorize("hasRole('U')")
 @RestController
 @Api(value="passengers", description="Сервис работы с пассажирами", tags = "Пассажиры", basePath="/passengers")
 @RequestMapping(path = "/${service.version}/passengers", produces = MediaType.APPLICATION_JSON_VALUE)
-public class PassengerController {
+public class PassengerController extends BaseController {
     @Autowired
     PassengerService passengerService;
 
