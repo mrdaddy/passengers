@@ -81,12 +81,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.ibm.db2.jcc</groupId>
+            <groupId>ibm.db2.jcc</groupId>
             <artifactId>db2jcc4</artifactId>
             <version>10.1</version>
         </dependency>
         <dependency>
-            <groupId>com.ibm.db2</groupId>
+            <groupId>ibm.db2</groupId>
             <artifactId>db2jcc4_license_cu</artifactId>
             <version>10.1</version>
         </dependency>
