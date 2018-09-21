@@ -18,22 +18,22 @@ public class PassengerService {
     @Autowired
     PassengerDao passengerDao;
 
-    public Passenger createPassenger(@Valid  Passenger passenger, long userId) {
+    public Passenger createPassenger(@Valid  Passenger passenger, @Valid User user) {
         return passenger;
     }
 
-    public Passenger updatePassenger(@Valid @Min(1) long passengerId, @Valid  Passenger passenger, long userId) {
+    public Passenger updatePassenger(@Valid @Min(1) long passengerId, @Valid  Passenger passenger, @Valid User user) {
         return passenger;
     }
 
-    public void deletePassenger(@Valid @Min(1) long passengerId, long userId) {
+    public void deletePassenger(@Valid @Min(1) long passengerId, @Valid User user) {
     }
 
-    public Passenger getPassenger(@Valid @Min(1) long passengerId, long userId) {
+    public Passenger getPassenger(@Valid @Min(1) long passengerId, @Valid User user) {
         return new Passenger();
     }
 
-    public List<Passenger> getPassengers(long userId) {
+    public List<Passenger> getPassengers(@Valid User user) {
         return new ArrayList<Passenger>();
     }
 }

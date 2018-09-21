@@ -25,21 +25,21 @@ public class PassengerController extends BaseController {
     @ApiOperation(value = "Создание пассажира", authorizations = @Authorization("jwt-auth"))
     @ResponseStatus( HttpStatus.CREATED )
     public Passenger createPassenger(@RequestBody @ApiParam Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
-        return passengerService.createPassenger(passenger, user.getId());
+        return passengerService.createPassenger(passenger, user);
     }
 
     @RequestMapping(method = RequestMethod.PUT, path = "/{passengerId}")
     @ApiOperation(value = "Обновление пассажира по идентификатору", authorizations = @Authorization("jwt-auth"))
     @ResponseStatus( HttpStatus.ACCEPTED )
     public Passenger createPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestBody @ApiParam(required = true, value = "Данные пассажира") Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
-        return passengerService.updatePassenger(passengerId, passenger, user.getId());
+        return passengerService.updatePassenger(passengerId, passenger, user);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{passengerId}")
     @ApiOperation(value = "Удаление пассажира по идентификатору", authorizations = @Authorization("jwt-auth"))
     @ResponseStatus( HttpStatus.ACCEPTED)
     public void deletePassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
-        passengerService.deletePassenger(passengerId, user.getId());
+        passengerService.deletePassenger(passengerId, user);
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{passengerId}")
@@ -52,7 +52,7 @@ public class PassengerController extends BaseController {
             @ApiResponse(code = 304, message = "Not Modified")
     })
     public Passenger getPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
-        return passengerService.getPassenger(passengerId, user.getId());
+        return passengerService.getPassenger(passengerId, user);
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -65,7 +65,7 @@ public class PassengerController extends BaseController {
             @ApiResponse(code = 304, message = "Not Modified")
     })
     public List<Passenger> getPassengers(@RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
-        return passengerService.getPassengers(user.getId());
+        return passengerService.getPassengers(user);
     }
 
 }
