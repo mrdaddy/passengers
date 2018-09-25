@@ -201,7 +201,7 @@
                 <artifactId>swagger2markup-maven-plugin</artifactId>
                 <version>1.0.1</version>
                 <configuration>
-                    <swaggerInput>${swagger.directory}/api.json</swaggerInput>
+                    <swaggerInput>${swagger.directory}/passengers.json</swaggerInput>
                     <outputFile>${asciidoctor.directory}/passengers</outputFile>
                     <config>
                         <swagger2markup.markupLanguage>ASCIIDOC</swagger2markup.markupLanguage>

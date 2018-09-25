@@ -33,7 +33,7 @@ public class SwaggerConfig {
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
                 .title("Сервис работы с пассажирами")
-                .description("Сервис включает в себя список операций получения графического представления вагона из СППД")
+                .description("Сервис включает в себя список операций с пассажирами в СППД")
                 .version("v1")
                 .license("БЖД")
                 .licenseUrl("https://www.rw.by/")
