@@ -24,24 +24,21 @@ public class PassengerController extends BaseController {
     @RequestMapping(method = RequestMethod.POST)
     @ApiOperation(value = "Создание пассажира", authorizations = @Authorization("jwt-auth"))
     @ResponseStatus( HttpStatus.CREATED )
-    public Passenger createPassenger(@RequestBody @ApiParam Passenger passenger,
-                                     @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+    public Passenger createPassenger(@RequestBody @ApiParam Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
         return passengerService.createPassenger(passenger, user);
     }
 
     @RequestMapping(method = RequestMethod.PUT, path = "/{passengerId}")
     @ApiOperation(value = "Обновление пассажира по идентификатору", authorizations = @Authorization("jwt-auth"))
-    @ResponseStatus( HttpStatus.OK )
-    public Passenger createPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId,
-                                     @RequestBody @ApiParam(required = true, value = "Данные пассажира") Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+    @ResponseStatus( HttpStatus.ACCEPTED )
+    public Passenger updatePassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestBody @ApiParam(required = true, value = "Данные пассажира") Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
         return passengerService.updatePassenger(passengerId, passenger, user);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{passengerId}")
     @ApiOperation(value = "Удаление пассажира по идентификатору", authorizations = @Authorization("jwt-auth"))
-    @ResponseStatus( HttpStatus.NO_CONTENT)
-    public void deletePassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId,
-                                @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+    @ResponseStatus( HttpStatus.ACCEPTED)
+    public void deletePassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
         passengerService.deletePassenger(passengerId, user);
     }
 
@@ -54,9 +51,7 @@ public class PassengerController extends BaseController {
                             @ResponseHeader(name = "ETag", response = String.class, description = "Хеш для кэширования")}),
             @ApiResponse(code = 304, message = "Not Modified")
     })
-    public Passenger getPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId,
-                                  @RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm,
-                                  @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+    public Passenger getPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
         return passengerService.getPassenger(passengerId, user);
     }
 
@@ -69,8 +64,7 @@ public class PassengerController extends BaseController {
                             @ResponseHeader(name = "ETag", response = String.class, description = "Хеш для кэширования")}),
             @ApiResponse(code = 304, message = "Not Modified")
     })
-    public List<Passenger> getPassengers(@RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm,
-                                         @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+    public List<Passenger> getPassengers(@RequestHeader(name="IF-NONE-MATCH", required = false) @ApiParam(name="IF-NONE-MATCH", value = "ETag из предыдущего закэшированного запроса") String inm, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
         return passengerService.getPassengers(user);
     }
 

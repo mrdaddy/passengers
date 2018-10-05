@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Sep 24 11:39:15 MSK 2018:
+ Производится загрузка Derby версии The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): экземпляр a816c00e-0166-0abb-8dba-000006fdc908
+в каталоге базы данных /Volumes/Files/MyFiles/programming/DerbyDb/passengers sun.misc.Launcher$AppClassLoader@75b84c92 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_152-b16
+user.dir=/Volumes/Files/MyFiles/programming/DerbyDb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.13.6
+derby.system.home=null
+Запущен загрузчик классов базы данных - derby.database.classpath=''
