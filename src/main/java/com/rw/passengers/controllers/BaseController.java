@@ -25,6 +25,7 @@ import java.util.List;
 @PreAuthorize("hasRole('U')")
 public class BaseController {
     public enum ERROR_PREFIX {validation, system, express}
+
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<?> handleInvalidRequest(ConstraintViolationException e, WebRequest request) {
         List<ErrorMessage> errors = new ArrayList<ErrorMessage>();

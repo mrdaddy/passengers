@@ -15,25 +15,28 @@ import java.util.List;
 @Service
 @Validated
 public class PassengerService {
+
     @Autowired
     PassengerDao passengerDao;
 
     public Passenger createPassenger(@Valid  Passenger passenger, @Valid User user) {
-        return passenger;
+
+        return passengerDao.createPassenger(passenger, user);
     }
 
     public Passenger updatePassenger(@Valid @Min(1) long passengerId, @Valid  Passenger passenger, @Valid User user) {
-        return passenger;
+        return passengerDao.updatePassenger(passengerId, passenger, user);
     }
 
     public void deletePassenger(@Valid @Min(1) long passengerId, @Valid User user) {
+        passengerDao.deletePassenger(passengerId, user);
     }
 
     public Passenger getPassenger(@Valid @Min(1) long passengerId, @Valid User user) {
-        return new Passenger();
+        return passengerDao.getPassenger(passengerId, user);
     }
 
     public List<Passenger> getPassengers(@Valid User user) {
-        return new ArrayList<Passenger>();
+        return passengerDao.getPassengers(user);
     }
 }

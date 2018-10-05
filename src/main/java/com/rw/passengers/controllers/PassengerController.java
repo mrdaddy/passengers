@@ -31,7 +31,7 @@ public class PassengerController extends BaseController {
     @RequestMapping(method = RequestMethod.PUT, path = "/{passengerId}")
     @ApiOperation(value = "Обновление пассажира по идентификатору", authorizations = @Authorization("jwt-auth"))
     @ResponseStatus( HttpStatus.ACCEPTED )
-    public Passenger createPassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestBody @ApiParam(required = true, value = "Данные пассажира") Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+    public Passenger updatePassenger(@ApiParam(required = true, value = "Уникальный идентификатор пассажира", example = "1") @PathVariable("passengerId") long passengerId, @RequestBody @ApiParam(required = true, value = "Данные пассажира") Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
         return passengerService.updatePassenger(passengerId, passenger, user);
     }
 
