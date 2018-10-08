@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ee215d9-d1e3-4b28-a1c3-a84adf3a96d1" name="Default Changelist" comment="Merge branch 'ttemmik' of https://github.com/mrdaddy/passengers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/rw/passengers/controllers/PassengerController.java">
+    <list default="true" id="9ee215d9-d1e3-4b28-a1c3-a84adf3a96d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/PassengerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/PassengerDao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -75,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="28" selection-start-line="28" selection-end-line="30" />
+            <state relative-caret-position="425">
+              <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -234,9 +230,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="528" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="658" />
+    <option name="y" value="17" />
+    <option name="width" value="1280" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -326,8 +323,8 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538986628278" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../unnumbered-orders" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538986963034" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../carriages" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -352,7 +349,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PassengersApplication">
+  <component name="RunManager" selected="Maven.db2 2">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -617,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538748649535</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Merge branch 'ttemmik' of https://github.com/mrdaddy/passengers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/rw/passengers/controllers/PassengerController.java">
+      <created>1538986654135</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1538986654135</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -626,7 +630,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18588000" />
+    <option name="totallyTimeSpent" value="18823000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -810,8 +814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="28" selection-start-line="28" selection-end-line="30" />
+        <state relative-caret-position="425">
+          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
