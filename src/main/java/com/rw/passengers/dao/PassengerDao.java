@@ -50,7 +50,7 @@ public class PassengerDao {
     public Passenger updatePassenger(long passengerId, Passenger passenger, User user) {
 
 
-        Map namedParameters = new HashMap();
+        Map<String, Object> namedParameters = new HashMap();
         namedParameters.put("bd", passenger.getBirthday());
         namedParameters.put("country", passenger.getCountry());
         namedParameters.put("doc_number", passenger.getDocumentNumber());
@@ -72,7 +72,7 @@ public class PassengerDao {
 
     public void deletePassenger(long passengerId, User user) {
 
-        Map namedParameters = new HashMap();
+        Map<String, Object> namedParameters = new HashMap();
         namedParameters.put("user_id", user.getId());
         namedParameters.put("passengerId", passengerId);
 
@@ -81,21 +81,21 @@ public class PassengerDao {
 
     public Passenger getPassenger(long passengerId, User user) {
 
-        Map namedParameters = new HashMap();
+        Map<String, Object> namedParameters = new HashMap();
         namedParameters.put("passengerId", passengerId);
         namedParameters.put("user_id", user.getId());
 
-        Passenger passenger = namedParameterJdbcTemplate.getJdbcTemplate().queryForObject(SQLQueries.PASSENGER_INFO, Passenger.class);
+        Passenger passenger = namedParameterJdbcTemplate.queryForObject(SQLQueries.PASSENGER_INFO, namedParameters, (rs, rowNum) -> getPassengerInfo(rs));
         return passenger;
     }
 
 
     public List<Passenger> getPassengers(User user) {
 
-        Map namedParameters = new HashMap();
+        Map<String, Object> namedParameters = new HashMap();
         namedParameters.put("user_id", user.getId());
 
-        List<Passenger> passengers = namedParameterJdbcTemplate.query(SQLQueries.PASSENGERS_INFO, (rs, rowNum) -> getPassengerInfo(rs));
+        List<Passenger> passengers = namedParameterJdbcTemplate.query(SQLQueries.PASSENGERS_INFO, namedParameters, (rs, rowNum) -> getPassengerInfo(rs));
 
         return passengers;
     }
