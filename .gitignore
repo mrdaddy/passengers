@@ -2,7 +2,6 @@
 !.mvn/wrapper/maven-wrapper.jar
 /src/main/resources/application.properties
 /src/test/resources/application.properties
-pom.xml
 derby.log
 /lib/*
 .DS_Store

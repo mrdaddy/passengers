@@ -46,7 +46,11 @@ public class PassengerDao {
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         namedParameters.put("country", Integer.valueOf(namedParameterJdbcTemplate.queryForRowSet( GET_COUNTRY_ID_BY_CODE, namedParameters).findColumn("ID")));
-        namedParameters.put("doc_type", Integer.valueOf(namedParameterJdbcTemplate.queryForRowSet(GET_DOCTYPE_ID_BY_CODE, namedParameters).findColumn("ID")));
+        int docType = namedParameterJdbcTemplate
+                .queryForObject(GET_DOCTYPE_ID_BY_CODE,
+                        namedParameters, (rs, rowNum) -> rs.getInt("ID"));
+
+        namedParameters.put("doc_type", docType);
 
         namedParameters.put("bd", passenger.getBirthday());
         namedParameters.put("doc_number", passenger.getDocumentNumber());
