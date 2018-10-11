@@ -3,8 +3,15 @@ package com.rw.passengers.dao;
 import com.rw.passengers.SQLQueries;
 import com.rw.passengers.dto.Passenger;
 import com.rw.passengers.security.User;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowCallbackHandler;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import sun.security.krb5.internal.PAData;
@@ -18,6 +25,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.rw.passengers.SQLQueries.GET_COUNTRY_ID_BY_CODE;
+import static com.rw.passengers.SQLQueries.GET_DOCTYPE_ID_BY_CODE;
+
 @Transactional
 @Repository
 public class PassengerDao {
@@ -27,23 +37,32 @@ public class PassengerDao {
 
     public Passenger createPassenger(Passenger passenger, User user) {
 
-        Map namedParameters = new HashMap();
+
+        Map<String, Object> namedParameters = new HashMap();
+
+        namedParameters.put("docTypeCode", passenger.getDocumentType());
+        namedParameters.put("passCountryCode", passenger.getCountry());
+
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+
+        namedParameters.put("country", Integer.valueOf(namedParameterJdbcTemplate.queryForRowSet( GET_COUNTRY_ID_BY_CODE, namedParameters).findColumn("ID")));
+        namedParameters.put("doc_type", Integer.valueOf(namedParameterJdbcTemplate.queryForRowSet(GET_DOCTYPE_ID_BY_CODE, namedParameters).findColumn("ID")));
+
         namedParameters.put("bd", passenger.getBirthday());
-        namedParameters.put("country", passenger.getCountry());
         namedParameters.put("doc_number", passenger.getDocumentNumber());
-        namedParameters.put("doc_type", passenger.getDocumentType());
         namedParameters.put("firstname", passenger.getFirstName());
         namedParameters.put("lastname", passenger.getLastName());
         namedParameters.put("patronymic", passenger.getPatronymic());
-        namedParameters.put("sex", passenger.getSex());
+        namedParameters.put("sex", passenger.getSex().toString());
         namedParameters.put("user_id", user.getId());
 
 
-        namedParameterJdbcTemplate.update(SQLQueries.PASSENGER_CREATE, namedParameters);
+        SqlParameterSource parameters = new MapSqlParameterSource(namedParameters);
+        namedParameterJdbcTemplate.update(SQLQueries.PASSENGER_CREATE, parameters, keyHolder);
+        passenger.setId(keyHolder.getKey().longValue());
 
-
-        passenger.setId(namedParameterJdbcTemplate.getJdbcTemplate().queryForObject(SQLQueries.PASSENGER_INFO, Passenger.class).getId());
-
+        //passenger = namedParameterJdbcTemplate.queryForObject(SQLQueries.PASSENGER_INFO, namedParameters, (rs, rowNum) -> getPassengerInfo(rs));
+        //passenger.setId(namedParameterJdbcTemplate.queryForObject(SQLQueries.PASSENGER_INFO, namedParameters, (rs, rowNum) -> getPassengerInfo(rs)).getId());
         return passenger;
     }
 
@@ -51,19 +70,21 @@ public class PassengerDao {
 
 
         Map<String, Object> namedParameters = new HashMap();
+
+        namedParameters.put("docTypeCode", passenger.getDocumentType());
+        namedParameters.put("passCountryCode", passenger.getCountry());
+
+        namedParameters.put("country", namedParameterJdbcTemplate.queryForRowSet( GET_COUNTRY_ID_BY_CODE, namedParameters).findColumn("ID"));
+        namedParameters.put("doc_type", namedParameterJdbcTemplate.queryForRowSet(GET_DOCTYPE_ID_BY_CODE, namedParameters).findColumn("ID"));
+
         namedParameters.put("bd", passenger.getBirthday());
-        namedParameters.put("country", passenger.getCountry());
         namedParameters.put("doc_number", passenger.getDocumentNumber());
-        namedParameters.put("doc_type", passenger.getDocumentType());
         namedParameters.put("firstname", passenger.getFirstName());
         namedParameters.put("lastname", passenger.getLastName());
         namedParameters.put("patronymic", passenger.getPatronymic());
-        namedParameters.put("sex", passenger.getSex());
+        namedParameters.put("sex", passenger.getSex().toString());
         namedParameters.put("user_id", user.getId());
         namedParameters.put("passengerId", passengerId);
-        namedParameters.put("user_id", user.getId());
-
-
 
         namedParameterJdbcTemplate.update(SQLQueries.PASSENGER_UPDATE, namedParameters);
         return passenger;
@@ -85,8 +106,8 @@ public class PassengerDao {
         namedParameters.put("passengerId", passengerId);
         namedParameters.put("user_id", user.getId());
 
-        Passenger passenger = namedParameterJdbcTemplate.queryForObject(SQLQueries.PASSENGER_INFO, namedParameters, (rs, rowNum) -> getPassengerInfo(rs));
-        return passenger;
+        return namedParameterJdbcTemplate.queryForObject(SQLQueries.PASSENGER_INFO, namedParameters, (rs, rowNum) -> getPassengerInfo(rs));
+
     }
 
 
@@ -96,24 +117,22 @@ public class PassengerDao {
         namedParameters.put("user_id", user.getId());
 
         List<Passenger> passengers = namedParameterJdbcTemplate.query(SQLQueries.PASSENGERS_INFO, namedParameters, (rs, rowNum) -> getPassengerInfo(rs));
-
         return passengers;
     }
-
 
     private Passenger getPassengerInfo(ResultSet rs) throws SQLException {
 
         Passenger passenger = new Passenger();
         passenger.setId(rs.getInt("ID"));
         passenger.setBirthday(rs.getDate("BIRTH_DATE"));
-        passenger.setCountry(rs.getString("COUNTRY"));
+        passenger.setCountry(rs.getString("COUNTRY_ID"));
         passenger.setFirstName(rs.getString("FIRST_NAME"));
         passenger.setLastName(rs.getString("LAST_NAME"));
         if(rs.getString("SEX").equals(Passenger.SEX_TYPE.F)){
             passenger.setSex(Passenger.SEX_TYPE.F);
         }else{passenger.setSex(Passenger.SEX_TYPE.M);}
         passenger.setDocumentNumber(rs.getString("DOCUMENT_NO"));
-        passenger.setDocumentType(rs.getString("DOCUMENT_TYPE"));
+        passenger.setDocumentType(rs.getString("DOCUMENT_TYPE_ID"));
         passenger.setPatronymic(rs.getString("PATRONYMIC"));
         return passenger;
     }
