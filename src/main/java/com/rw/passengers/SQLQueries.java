@@ -15,12 +15,17 @@ public interface SQLQueries {
 
 
         String PASSENGER_CREATE = "INSERT INTO ETICKET.USER_PASSENGERS( USER_ID, LAST_NAME , FIRST_NAME , PATRONYMIC, SEX, BIRTH_DATE, COUNTRY_ID, DOCUMENT_TYPE_ID, DOCUMENT_NO) " +
-                " VALUES ( :user_id , :lastname , :firstname , :patronymic , :sex, :bd, :country,:doc_type,:doc_number)";
+                " VALUES ( :user_id , :lastname , :firstname , :patronymic , :sex, :bd, :country,:doc_type, :doc_number)";
 
 
         String GET_DOCTYPE_ID_BY_CODE = "SELECT ID FROM ETICKET.DOCUMENT_TYPES WHERE CODE = :docTypeCode";
 
         String GET_COUNTRY_ID_BY_CODE = "SELECT ID FROM ETICKET.PASSENGER_COUNTRIES WHERE ISO_CODE = :passCountryCode";
 
+        String GET_DOCTYPE_CODE_BY_ID = "SELECT CODE FROM ETICKET.DOCUMENT_TYPES WHERE ID = :id";
+
+        String GET_COUNTRY_BY_ID = "SELECT ISO_CODE FROM ETICKET.PASSENGER_COUNTRIES WHERE ID = :id";
+
+        String GET_DOCTYPE_CODES_FOR_USER = "SELECT DOCUMENT_TYPE_ID, DOCUMENT_NO FROM ETICKET.USER_PASSENGERS WHERE USER_ID = :userId";
 
 }

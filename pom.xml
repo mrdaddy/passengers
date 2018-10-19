@@ -86,20 +86,20 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>ibm.db2.jcc</groupId>
-            <artifactId>db2jcc4</artifactId>
-            <version>10.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/com/ibm/db2/jcc/db2jcc4/10.1/db2jcc4-10.1.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>ibm.db2</groupId>
-            <artifactId>db2jcc4_license_cu</artifactId>
-            <version>10.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/com/ibm/db2/db2jcc4_license_cu/10.1/db2jcc4_license_cu-10.1.jar</systemPath>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>ibm.db2.jcc</groupId>-->
+            <!--<artifactId>db2jcc4</artifactId>-->
+            <!--<version>10.1</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/lib/com/ibm/db2/jcc/db2jcc4/10.1/db2jcc4-10.1.jar</systemPath>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>ibm.db2</groupId>-->
+            <!--<artifactId>db2jcc4_license_cu</artifactId>-->
+            <!--<version>10.1</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/lib/com/ibm/db2/db2jcc4_license_cu/10.1/db2jcc4_license_cu-10.1.jar</systemPath>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>

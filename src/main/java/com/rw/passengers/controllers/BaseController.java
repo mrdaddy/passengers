@@ -18,10 +18,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJtcmRhZGR5IiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9VIn1dLCJ1c2VyIjp7ImlkIjozMCwiZW1haWwiOiJtcmRhZGR5QG1haWwucnUiLCJsYW5ndWFnZSI6InJ1In0sImlhdCI6MTUzOTk0NjEzMiwiZXhwIjoxNTM5OTgyMTMyfQ.cZUIHkobq1MUmmHDYPa9da1zUbom_tOZLUhwdnidFMYJaLc2eX9Nq1yqtcsK3zbYxt7EEJRP_su7rkAl9U1xVETQ484D8mlGo0pCLFeDDQYnuM1UxnJBi83csLwQzrBKTGItCj6N2tVJKl5qU0QiIWcvH9-hl3folf9lYPXH9pOGj8Y9FJzSoZvH_Nz7J5AePEaec59g4KhseOcqGOGHoFxgVRkgG7up-EUuezNGjXWdeab18PghxbxpawWiHbE08W_ba4qXFywKe5M5K11r_OfZGMDVOTOpq7LfL_l0NaaNRSZoU-Nx3xBa_gAAoSjtImHX1_R86vR7lMV9NKfWIw
+
+
+
 @ApiResponses(value = {
         @ApiResponse(code = 400, message = "Bad request", response = ErrorMessage.class, responseContainer = "List"),
         @ApiResponse(code = 503, message = "Service Unavailable"),
 })
+
 @PreAuthorize("hasRole('U')")
 public class BaseController {
     public enum ERROR_PREFIX {validation, system, express}
@@ -67,4 +72,10 @@ public class BaseController {
         return errors;
     }
 
+    @ExceptionHandler(ExceptionInInitializerError.class)
+    protected List<ErrorMessage> handleDocumentTypeValidationException(ExceptionInInitializerError e) {
+        List<ErrorMessage> errors = new ArrayList<>();
+        errors.add(new ErrorMessage(ERROR_PREFIX.validation + ".documentType&documentNumber_Unique", "Пассажир, зарегестрированный на указанный документ уже существует"));
+        return errors;
+    }
 }

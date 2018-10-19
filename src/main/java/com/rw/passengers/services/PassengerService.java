@@ -39,4 +39,5 @@ public class PassengerService {
     public List<Passenger> getPassengers(@Valid User user) {
         return passengerDao.getPassengers(user);
     }
+
 }

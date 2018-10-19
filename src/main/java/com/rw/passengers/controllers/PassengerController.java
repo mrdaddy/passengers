@@ -1,14 +1,17 @@
 package com.rw.passengers.controllers;
 
-import com.rw.passengers.dto.ErrorMessage;
+import com.rw.passengers.dao.ValidateDao;
 import com.rw.passengers.dto.Passenger;
 import com.rw.passengers.security.User;
 import com.rw.passengers.services.PassengerService;
+import com.rw.passengers.services.ValidationService;
+import com.rw.passengers.validator.PassengerInformationValidator;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -21,10 +24,19 @@ public class PassengerController extends BaseController {
     @Autowired
     PassengerService passengerService;
 
+    @Autowired
+    ValidationService validationService;
+
+    @InitBinder("passenger")
+    protected void initPassengerInformationBinder(WebDataBinder binder) {
+        binder.addValidators(new PassengerInformationValidator());
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     @ApiOperation(value = "Создание пассажира", authorizations = @Authorization("jwt-auth"))
     @ResponseStatus( HttpStatus.CREATED )
     public Passenger createPassenger(@RequestBody @ApiParam Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+        validationService.validateDocTypeUnique(passenger.getDocumentType(),passenger.getDocumentNumber(),user.getId());
         return passengerService.createPassenger(passenger, user);
     }
 
