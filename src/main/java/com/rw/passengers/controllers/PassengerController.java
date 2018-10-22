@@ -15,6 +15,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,7 @@ public class PassengerController extends BaseController {
     @Autowired
     ValidationService validationService;
 
-    @InitBinder("passenger")
+    @InitBinder
     protected void initPassengerInformationBinder(WebDataBinder binder) {
         binder.addValidators(new PassengerInformationValidator());
     }
@@ -35,8 +36,8 @@ public class PassengerController extends BaseController {
     @RequestMapping(method = RequestMethod.POST)
     @ApiOperation(value = "Создание пассажира", authorizations = @Authorization("jwt-auth"))
     @ResponseStatus( HttpStatus.CREATED )
-    public Passenger createPassenger(@RequestBody @ApiParam Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
-        validationService.validateDocTypeUnique(passenger.getDocumentType(),passenger.getDocumentNumber(),user.getId());
+    public Passenger createPassenger(@Valid @RequestBody @ApiParam Passenger passenger, @ApiIgnore @RequestAttribute(value = "user", required = false) User user) {
+       // validationService.validateDocTypeUnique(passenger.getDocumentType(),passenger.getDocumentNumber(),user.getId());
         return passengerService.createPassenger(passenger, user);
     }
 
