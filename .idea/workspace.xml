@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ee215d9-d1e3-4b28-a1c3-a84adf3a96d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ParameterDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/PassengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/PassengerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/services/ValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/services/ValidationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,24 +34,24 @@
     <session id="-2059190847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="7" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="26" />
+          <entry key="java" value="31" />
           <entry key="properties" value="4" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="26" />
+          <entry key="JAVA" value="31" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="4" />
           <entry key="XML" value="3" />
@@ -60,7 +59,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="568" />
+          <entry key="java" value="577" />
           <entry key="properties" value="3" />
           <entry key="txt" value="16" />
           <entry key="xml" value="30" />
@@ -68,7 +67,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="568" />
+          <entry key="JAVA" value="577" />
           <entry key="PLAIN_TEXT" value="16" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="30" />
@@ -78,20 +77,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/PassengerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="65" column="37" lean-forward="true" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
+            <state relative-caret-position="282">
+              <caret line="140" column="37" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="37" />
               <folding>
                 <element signature="e#7553#15009#0" />
               </folding>
@@ -102,17 +92,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="289">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/services/ValidationService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="43" column="35" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="35" />
+            <state relative-caret-position="68">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+              <folding>
+                <element signature="e#4342#4343#0" expanded="true" />
+                <element signature="e#4410#4411#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ValidateDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="138" column="87" selection-start-line="138" selection-start-column="87" selection-end-line="138" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,23 +133,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/BaseController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="76" column="33" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="33" />
+            <state relative-caret-position="544">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/validator/PassengerInformationValidator.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ParameterDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="238">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#685#686#0" expanded="true" />
-                <element signature="e#745#746#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/PassengerDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
+            <state relative-caret-position="238">
               <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -168,7 +178,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="59" lean-forward="true" selection-start-column="34" selection-end-column="59" />
+              <caret column="59" selection-start-column="34" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -186,6 +196,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>def</find>
+      <find>jaegertracing</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,11 +214,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/CustomWebSecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/CustomWebSecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/dto/ErrorMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/SwaggerConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c8e4dd85-ea1d-4858-8189-21ea1659c99f/console_1.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c8e4dd85-ea1d-4858-8189-21ea1659c99f/console_2.sql" />
         <option value="$PROJECT_DIR$/src/test/java/controllers/IT/PassengerControllerIT.java" />
@@ -226,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/test/java/controllers/PassengerControllerIT.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/dto/Document.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ValidateDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/validator/PassengerInformationValidator.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -234,6 +242,10 @@
         <option value="$PROJECT_DIR$/src/test/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/PassengerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ParameterDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java" />
       </list>
     </option>
   </component>
@@ -270,6 +282,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -404,8 +418,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -425,7 +437,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Volumes/Files/MyFiles/programming/IBA/passengers/src/main/java/com/rw/passengers/dto/Passenger.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540206846390" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540551902603" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="DDL Data Source&#10;Derby (Embedded)&#10;Derby (Remote)" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -630,7 +642,8 @@
       <workItem from="1539679972659" duration="10300000" />
       <workItem from="1539853212932" duration="5188000" />
       <workItem from="1539938193825" duration="10971000" />
-      <workItem from="1540205017726" duration="1779000" />
+      <workItem from="1540205017726" duration="2545000" />
+      <workItem from="1540551635527" duration="266000" />
     </task>
     <task id="LOCAL-00001" summary="developer commit">
       <created>1535634833151</created>
@@ -702,7 +715,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536911794979</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="developer commit">
+      <created>1540206879797</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1540206879797</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -738,7 +758,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68557000" />
+    <option name="totallyTimeSpent" value="69589000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -753,35 +773,32 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Image Layers" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21695095" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21908316" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="OpenShift Origin" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Docker" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.492674" weight="0.18101153" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32900432" />
-      <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.3982684" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3982684" />
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.507326" side_tool="true" weight="0.18012422" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="bottom" id="Run Dashboard" order="10" weight="0.32919255" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.16666667" />
       <window_info anchor="bottom" id="Spring" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32900432" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Docker" order="15" />
+      <window_info anchor="bottom" id="OpenShift Origin" order="16" />
+      <window_info anchor="bottom" id="Database Changes" order="17" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -789,6 +806,9 @@
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.18443497" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
       <window_info anchor="right" id="Bean Validation" order="6" />
+      <window_info anchor="right" id="Palette" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -853,36 +873,15 @@
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rw/passengers/validator/PassengerInformationValidator.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/rw/passengers/services/ValidationService.java</url>
           <line>24</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/PassengerController.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c8e4dd85-ea1d-4858-8189-21ea1659c99f/console_2.sql" />
-    <entry file="das://table:/7b0f5777/c8e4dd85-ea1d-4858-8189-21ea1659c99f/USER.PASSENGERS" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.0.8.RELEASE/spring-jdbc-5.0.8.RELEASE.jar!/org/springframework/jdbc/core/RowMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/7b0f5777/c8e4dd85-ea1d-4858-8189-21ea1659c99f/ETICKET.PASSENGERS" />
     <entry file="file://$PROJECT_DIR$/src/resources/application.properties" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
@@ -1039,44 +1038,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="95" selection-start-line="28" selection-start-column="95" selection-end-line="28" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ValidateDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="65" column="37" lean-forward="true" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
-          <folding>
-            <element signature="e#7553#15009#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="59" lean-forward="true" selection-start-column="34" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1087,10 +1052,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/services/PassengerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/PassengerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/services/ValidationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
+        <state relative-caret-position="1020">
           <caret line="76" column="33" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/validator/PassengerInformationValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/PassengerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,56 +1112,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/services/PassengerService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state>
+          <caret column="59" selection-start-column="34" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/PassengerDao.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="282">
+          <caret line="140" column="37" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/validator/PassengerInformationValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/services/ValidationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="43" column="35" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#7553#15009#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="289">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/controllers/PassengerController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+        <state relative-caret-position="68">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ValidateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="138" column="87" selection-start-line="138" selection-start-column="87" selection-end-line="138" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ParameterDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#4342#4343#0" expanded="true" />
+            <element signature="e#4410#4411#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

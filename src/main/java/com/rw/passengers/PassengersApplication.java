@@ -24,11 +24,4 @@ public class PassengersApplication {
         return frb;
     }
 
-    @Bean
-    public boolean configureGlobalTracer()	{
-        Tracer tracer = Configuration.fromEnv().getTracer();
-        GlobalTracer.register(tracer);
-        return true;
-    }
-
 }

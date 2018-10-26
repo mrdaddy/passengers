@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
+import com.rw.passengers.dao.ParameterDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -28,17 +30,19 @@ import java.util.Base64;
 @Component
 public class JwtTokenProvider {
 
+    @Autowired
+    private ParameterDao parameterDao;
+
     /**
      * THIS IS NOT A SECURE PRACTICE! For simplicity, we are storing a static key here. Ideally, in a
      * microservices environment, this key would be kept on a config-server.
      */
-    @Value("${security.jwt.token.public-key}")
-    private String realmPublicKey;
     private PublicKey publicKey;
 
     @PostConstruct
     protected void init() {
         try {
+            String realmPublicKey = getPKFromDB();
             publicKey = decodePublicKey(pemToDer(realmPublicKey));
         } catch (Exception e) {
             throw new RuntimeException("Invalid public key");
@@ -111,6 +115,10 @@ public class JwtTokenProvider {
                 //        , "BC" //use provider BouncyCastle if available.
         );
         return kf.generatePublic(spec);
+    }
+
+    private String getPKFromDB() {
+        return parameterDao.getParameterByCode("PUBLIC_KEY");
     }
 
 }
