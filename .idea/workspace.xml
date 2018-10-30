@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ee215d9-d1e3-4b28-a1c3-a84adf3a96d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/dao/ParameterDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/PassengersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/SQLQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rw/passengers/security/JwtTokenProvider.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,7 +30,7 @@
     <session id="-2059190847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="7" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="2" />
@@ -272,8 +268,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="2" />
+    <option name="width" value="1362" />
+    <option name="height" value="720" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -437,7 +434,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Volumes/Files/MyFiles/programming/IBA/passengers/src/main/java/com/rw/passengers/dto/Passenger.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540551902603" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540552821236" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="DDL Data Source&#10;Derby (Embedded)&#10;Derby (Remote)" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -449,11 +446,11 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -643,7 +640,7 @@
       <workItem from="1539853212932" duration="5188000" />
       <workItem from="1539938193825" duration="10971000" />
       <workItem from="1540205017726" duration="2545000" />
-      <workItem from="1540551635527" duration="266000" />
+      <workItem from="1540551635527" duration="890000" />
     </task>
     <task id="LOCAL-00001" summary="developer commit">
       <created>1535634833151</created>
@@ -722,7 +719,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540206879797</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="developer commit">
+      <created>1540551915136</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1540551915136</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -758,7 +762,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69589000" />
+    <option name="totallyTimeSpent" value="70213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -771,7 +775,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21908316" />
       <window_info id="Structure" order="1" weight="0.25" />
